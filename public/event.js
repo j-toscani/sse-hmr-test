@@ -1,5 +1,8 @@
-const source = new EventSource("/events");
+var source = new EventSource("/events")
 
-source.onmessage = () => {
-    console.log("Reload")
-};
+source.addEventListener(
+  "message",
+  () => {
+    location.reload()
+  }
+)
